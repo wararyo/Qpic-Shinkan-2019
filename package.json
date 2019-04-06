@@ -1,18 +1,24 @@
 {
-  "name": "wararyo non-PHP Project",
+  "name": "qpic-shinkan-2019",
   "version": "1.0.0",
-  "description": "PHPじゃないプロジェクト",
-  "main": "index.js",
+  "description": "電撃少女エクレアのWebサイトです",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://wararyo@github.com/wararyo/Qpic-Shinkan-2019.git"
   },
   "keywords": [
-    "stans",
-    "gulp",
-    "ecss"
+    "qpic"
   ],
   "author": "wararyo",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wararyo/Qpic-Shinkan-2019/issues"
+  },
+  "homepage": "https://github.com/wararyo/Qpic-Shinkan-2019#readme",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^4.0.0",
