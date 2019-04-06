@@ -1,0 +1,143 @@
+.download {
+	width: 100%;
+	max-width: 960px;
+	margin: 360px auto 420px;
+	color: $white;
+
+	h2 {
+		width: 100%;
+		margin: 36px 0;
+		font-size: 2.4em;
+		text-align: center;
+		font-weight: bold;
+		line-height: 1.6em;
+		text-shadow: 0 3px 6px rgba($black, .4);
+
+		span {
+			display: inline-block;
+		}
+	}
+
+	h3 {
+		width: 100%;
+		text-align: center;
+		font-size: 1.2em;
+	}
+
+	ul {
+		padding: 8px 16px;
+	}
+
+	li {
+		margin-left: 16px;
+		list-style-type: circle;
+	}
+	
+	p {
+		margin: 16px 0;
+		text-align: center;
+		font-size: 1.6em;
+		line-height: 1.8em;
+		text-shadow: 0 2px 4px rgba($black, .3);
+
+		> span {
+			display: inline-block;
+		}
+	}
+
+	.emphasized {
+		font-size: 120%;
+		font-weight: bold;
+		text-shadow: 0 3px 6px rgba(0,0,0,.2);
+	}
+}
+
+.download-inner {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.download-pane {
+	padding: 24px 8px;
+	min-width: 240px;
+
+	&.is-main {
+		flex: 2;
+		border-right: 1px solid $white;
+	}
+
+	&.is-sub {
+		flex: 1;
+	}
+}
+
+.download-button {
+	display: block;
+	border-radius: 2px;
+	margin: 48px auto;
+	width: 600px;
+	max-width: calc(100% - 16px);
+	height: 300px;
+	padding: 0;
+	background: url("images/download/eclair-button.png");
+	background-position: center;
+	background-size: cover;
+	box-shadow: 0 0 0 2px rgba($white,.5) inset;
+	text-shadow: 0 2px 8px rgba($black,1);
+	color: $white;
+	text-align: center;
+	transition: all 0.1s;
+	text-decoration: none;
+	transform: scale(1);
+			filter: url(#drop-shadow);
+	-webkit-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+
+	&:hover {	
+		box-shadow: 0 0 0 6px rgba($white,.5) inset;
+		transform: scale(1.03);
+	}
+
+	span {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+}
+
+.download-minigame-button {
+	display: block;
+	margin: 24px 0;
+	text-align: center;
+
+	img {
+				filter: url(#drop-shadow);
+  		-webkit-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+	}
+}
+
+@include mq(sp){
+
+	.download {
+		h2 {
+			font-size: 1.8em;
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
+
+	.download-pane {
+		width: 100%;
+		min-width: none;
+		&.is-main {
+			border-right: none;
+			border-bottom: 1px solid $white;
+		}
+	}
+
+	.download-button {
+		margin: 48px 8px;
+		height: 160px;
+	}
+}

@@ -1,0 +1,85 @@
+#minigames {
+	display: none;
+}
+
+.minigames-container {
+	background: url("images/common/stripe.png");
+	background-size: 177px 151px;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+
+.minigames {
+
+	h3 {
+		padding: 32px 0 16px;
+		text-align: center;
+		font-size: 2em;
+		text-shadow: 0 2px 4px rgba($black, .2);
+	}
+
+	h4 {
+		padding: 0 16px;
+	}
+
+	p {
+		margin: 16px 16px;
+	}
+}
+
+.minigames-inner {
+	margin: 32px auto;
+}
+
+.minigame {
+	width: calc(100% - 64px);
+	margin: 0 auto;
+	padding: 16px;
+	border-radius: 2px;
+	border: solid 1px #EEE;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba($black, .2);
+}
+
+.minigame-logo {
+}
+
+.minigame-inner {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 8px 0;
+
+	.description {
+		flex: 1;
+		align-self: flex-start;
+		min-width: 240px;
+	}
+}
+
+.minigame-screenshot {
+}
+
+.minigame-download.button {
+	background-color: $eclair-orange;
+	margin: 16px auto 0;
+
+	&:hover {
+		color: $eclair-orange;
+	}
+}
+
+.mobile {
+	display: none;
+}
+
+@include mq(sp){
+	.minigame-inner {
+		flex-direction: column;
+	}
+
+	.mobile {
+		display: block;
+	}
+}
