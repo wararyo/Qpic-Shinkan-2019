@@ -62,7 +62,7 @@
 				font-weight: bold;
 				transition: border-width 0.4s, all 0.1s;
 				border-bottom-width: 0px;
-        		border: solid 0px #f2711c;
+        		border: solid 0px $secondary-color;
 				&:hover {
 					background-color: #FAFAF7;
 					color: $black;//activeなやつをhoverしたとき用

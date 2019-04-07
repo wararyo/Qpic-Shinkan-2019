@@ -19,6 +19,10 @@
 		tr {
 			border-bottom: 1px solid #ddd;
 		}
+		.canceled {
+			text-decoration: line-through;
+			opacity: 0.2;
+		}
 		tbody tr:last-of-type {
 			border: none;
 		}
