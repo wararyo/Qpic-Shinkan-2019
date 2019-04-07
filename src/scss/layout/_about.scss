@@ -1,5 +1,6 @@
 .about {
-	width: 1200px;
+	width: calc(100% - 16px);
+	max-width: 1200px;
 	margin: 24px auto;
 	padding: 24px;
 	background-color: #FFF;
@@ -38,4 +39,10 @@
 }
 
 @include mq(sp){
+	.about {
+		img {
+			float: none;
+			margin: 16px auto;
+		}
+	}
 }

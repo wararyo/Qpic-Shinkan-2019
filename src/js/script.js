@@ -19,7 +19,7 @@ var isMobile = function () {
 };
 
 // 見出しを見てる判定を行う画面上のY位置
-var viewThreshold = isPhone() ? 0.1 : 0.3;
+var viewThreshold = isPhone() ? 0.2 : 0.3;
 // 見てる見出しによってナビゲーションの見た目を変えるやつ
 var onScroll = function() {
   var headings = document.getElementsByTagName('h2');
@@ -55,7 +55,7 @@ var header = new Vue({
 var vue = new Vue({
   el: '#wrapper',
   data: {
-    currentSection: 0,
+    currentSection: -1,
     shownInMobile: false
   },
   computed: {

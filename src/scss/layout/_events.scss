@@ -1,5 +1,6 @@
 .events {
-	width: 1200px;
+	width: calc(100% - 16px);
+	max-width: 1200px;
 	margin: 24px auto;
 	padding: 24px;
 	background-color: #FFF;
@@ -30,6 +31,7 @@
 			justify-content: center;
 			align-items: center;
 			color: #555;
+			vertical-align: middle;
 		}
 		.events-content {
 			margin: 16px;
@@ -64,11 +66,32 @@
 	}
 }
 
+@include mq(tl){
+	.events {
+
+	}
+}
+
 @include mq(sp){
 	.events {
 		table {
 			thead {
 				display: none;
+			}
+			tbody {
+				td {
+					display: block;
+				}
+				td:first-of-type {
+					display: block;
+					margin: 16px 8px 0;
+				}
+				.events-content {
+					margin: 8px;
+				}
+				img {
+					float: none;
+				}
 			}
 		}
 	}

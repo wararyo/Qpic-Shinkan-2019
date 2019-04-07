@@ -14,6 +14,8 @@
 
 	> .container-wide {
 		height: 100%;
+		width: calc(100% - 32px);
+		max-width: 1200px;
 	}
 
 	ul {
@@ -80,23 +82,20 @@
 }
 
 .nav-top {
-	width: 80px;
-	img {
-		height: 64px;
+	width: 56px;
+	transition: all .2s ease-in-out;
+	&.is-hidden {
+		width: 0;
+		opacity: 0;
 	}
+	overflow: hidden;
 }
 
-.nav-events {
-	flex: 5;
-}
-.nav-about {
-	flex: 5;
-}
-.nav-activity {
-	flex: 5;
-}
+.nav-events,
+.nav-about,
+.nav-activity,
 .nav-qa {
-	flex: 5;
+	flex: 1;
 }
 
 .toolbar-mobile {
@@ -107,13 +106,6 @@
 }
 
 @include mq(pc-narrow){
-	.nav-about,
-	.nav-events,
-	.nav-activity,
-	.nav-qa {
-		flex: 1;
-	}
-
 	.navigation ul li {
 		font-size: 1.2em;
 	}
@@ -121,12 +113,6 @@
 @include mq(tl){
 	.navigation ul li {
 		font-size: 1.2em;
-	}
-	.nav-about,
-	.nav-events,
-	.nav-activity,
-	.nav-qa {
-		flex: 1;
 	}
 }
 @include mq(sp){
@@ -152,6 +138,7 @@
 		padding: 0;
 		transition: height .2s ease-out;
 		overflow: hidden;
+		border-bottom: solid 3px $secondary-color;
 
 		&.shown-in-mobile {
 			height: 56 * 6px;
@@ -186,6 +173,12 @@
 			}
 			&:first-child:after {
 				width: 0;
+			}
+			a:hover {
+				border-bottom-width: 0;
+			}
+			&.active a {
+				border-bottom-width: 0;
 			}
 		}
 	}

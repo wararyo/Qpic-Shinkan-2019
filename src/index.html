@@ -19,7 +19,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content="http://qpic.jp/images/common/ogp.png" />
 
-    <!-- <meta name="theme-color" content="#F28446"> -->
+    <meta name="theme-color" content="#FEDF00">
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -42,16 +42,16 @@
 	  </div>
 	</header>
 	<div id="wrapper" class="navigation-wrapper">
-	<a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navgation/hamburger.svg" alt="メニュー"></a>
+	<a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navigation/hamburger.svg" alt="メニュー"></a>
 	<nav id="nav" class="navigation" v-bind:class="{'shown-in-mobile': shownInMobile}">
 		<div class="container-wide">
 			<ul>
 				<li v-if="isPhone" class="toolbar-mobile"><a v-on:click="shownInMobile = !shownInMobile">{{currentSectionName}}</a></li>
-				<li class="nav-top" v-on:click="shownInMobile = false"><a href="#"><img src="images/navgation/top-icon.svg" alt="トップへ"></a></li>
-				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="fa-home fa"></i>新歓イベント</a></li>
+				<li class="nav-top" v-on:click="shownInMobile = false":class="{'is-hidden': !isPhone && currentSection == -1}"><a href="#"><img src="images/navigation/top-icon.svg" width="32" alt="トップへ"></a></li>
+				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="fa-calendar-alt fa"></i>新歓イベント</a></li>
 				<li class="nav-about" :class="{active: currentSection == 1}" v-on:click="shownInMobile = false"><a href="#about"><i class="fa-child fa"></i>Qpicって？</a></li>
-				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="fa-child fa"></i>主な活動</a></li>
-				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="fa-child fa"></i>Q&A</a></li>
+				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="fa-walking fa"></i>主な活動</a></li>
+				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="fa-question fa"></i>Q&A</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -67,11 +67,11 @@
 		</div>
 	</div>
 
-	<a class="join-button"><i class="fa-handshake fa"></i>入部する</a>
-	<div style="width: 80%; max-width: 800px; margin: 0 auto; text-align: right;"><img style="margin: -16px 0 -4px; -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .2) );" src="images/shinkan/f.png"></div>
+	<a class="join-button"><i class="fa-handshake fa"></i>入部する(準備中)</a>
+	<div style="width: 80%; max-width: 1080px; margin: 0 auto; text-align: right;"><img style="margin: -8px 0 -26px; -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .2) );" src="images/common/F.svg" width="160"></div>
 
 	<div class="events" id="events">
-		<h2>Event Calendar</h2>
+		<h2>新歓イベント</h2>
 		<table>
 			<thead>
 				<tr>
@@ -83,7 +83,7 @@
 				<tr>
 					<td>
 						<span class="date">4/8</span>
-						at 2203
+						at 2203 
 						<span class="date">4/11</span>
 						at 2201
 					</td>
@@ -279,6 +279,9 @@
 			Qpic部員は黄色いパーカーが目印です。<br/>
 		入部前に不安は解消してしまいましょう！</p>
 	</div>
+
+	<a class="join-button"><i class="fa-handshake fa"></i>入部する(準備中)</a>
+
 	<footer class="footer">
 		<div class="footer-content" >
 		    <div class="footer-pane">
@@ -319,7 +322,7 @@
     <script>
     	const sweetScroll = new SweetScroll({
   			trigger: "a[href^='#']",
-  			offset: isPhone() ? -280 : -80,
+  			offset: isPhone() ? -360 : -80,
   			duration: 500
 		});
     </script>

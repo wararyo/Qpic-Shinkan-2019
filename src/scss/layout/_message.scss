@@ -8,8 +8,8 @@
 }
 .message .message-header{
     display: flex;
-    margin-bottom: 8px;
-
+    //margin-bottom: 8px;
+	line-height: 2em;
 }
 .message .fa{
     display: inline-block;
@@ -44,7 +44,7 @@
 
 @media only screen and (max-width:991px){
     .message{
-        width: 100%;
+        width: calc(100% - 32px);
         padding: 16px;
     }
 }

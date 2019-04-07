@@ -24,8 +24,8 @@
     line-height: 60px;
     text-align: center;
     margin: 32px auto;
-    background-color: #f59231;
-    border: solid 2px #f59231;
+    background-color: #888;
+    border: solid 2px #888;
     color: #FFF;
     border-radius: 2px;
     font-size: 1.6em;
@@ -37,10 +37,10 @@
         margin-right: 8px;
     }
 
-    &:hover {
-        background-color: #FFF;
-        color: #f59231;
-        transform: translateY(-2px);
-        box-shadow: 0px 4px 8px rgba(0,0,0,.2);
-    }
+    // &:hover {
+    //     background-color: #FFF;
+    //     color: #f59231;
+    //     transform: translateY(-2px);
+    //     box-shadow: 0px 4px 8px rgba(0,0,0,.2);
+    // }
 }
