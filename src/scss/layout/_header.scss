@@ -1,335 +1,186 @@
-/* header */
-
-//枠
+header {
+  a, a:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
 
 .header {
-	position: relative;
-	width: 100%;
-	height: 640px;
-	overflow: hidden;
+  position: relative;
+  height: 480px;
+  width: 100%;
+  background-color: $primary-color;
+  text-align: center;
+  overflow: hidden;
+  transition: height .7s;
+
+  @media (max-width: 767px) {
+    height: 240px;
+  }
 }
 
-.header-container {
-	position: relative;
-	width: 1280px;
-	height: 100%;
-	margin: 0 auto;
+.hidden {
+  display: none;
 }
 
-@include mq(pc-narrow) {
-	.header-container {
-		width: 100%;
-		max-width: 1024px;
-	}
-}
-@include mq(tl) {
-	.header {
-		height: auto;
-	}
-	.header-container {
-		width: 100%;
-		padding: 24px 0;
-		text-align: center;
-	}
-}
-@include mq(sp){
-	.header {
-		height: auto;
-	}
-	.header-container {
-		width: 100%;
-		padding: 24px 0;
-		text-align: center;
-	}
+.header_main {
+  position: relative;
+  height: 100%;
+
+  @media (max-width: 767px) {
+    height: 100%;
+  }
 }
 
-//中身
+.header_text {
+  * {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 
-.header-qpic {
-	position: absolute;
-	top: 36px;
-	left: 48px;
-			filter: url(#drop-shadow);
-	-webkit-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
-	img {
-		height: 48px;
-	}
+  > p {
+    span {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 8px;
+      background-color: #FEDF00;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  > p:first-child {//好きなものを作ろう。
+    top: 16%;
+    transform: translateX(1%);//視覚的中央
+    font-size: 1.6em;
+    padding: 20px;
+    background-image: url("images/header/catchphrase_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  > p:nth-child(2) {//ゲーム制作サークル
+    top: 38%;
+    span{
+      min-width: 160px;//fit-content非対応ブラウザ対策
+    }
+    @media (max-width: 767px) {
+      top: 14%;
+      font-size: 0.8em;
+    }
+  }
+
+  // > p:last-child {
+  //   bottom: 16%;
+  //   @media (max-width: 767px) {
+  //     display: block;
+  //   }
+  // }
 }
 
-.header-logo {
-	position: absolute;
-	top: 96px;
-	right: 100px;
-	img {
-		height: 360px;
-	}
+
+.header_qpic_logo {
+  height: 200px;
+  max-width: 60%;
+  top: 62%;
+  transform: translateY(-50%);
+  padding-right: 24px;/*視覚的中央*/
+  @media (max-width: 767px) {
+    top: 52%;
+  }
 }
 
-.header-hero {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	transform: translateX(10%);
-	background: url("images/header/flare.svg");
-	background-size: cover;
-	background-repeat: no-repeat;
+.header_bgimage_wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  top: 50%;
+  padding-top: 80%;
+  transform: translateY(-50%) scale(1.3);
+
+  @media (max-width: 767px) {
+    transform: translateY(-50%) scale(1.4) ;
+  }
 }
 
-.header-detail {
-	position: absolute;
-	bottom: 16px;
-	left: 128px;
-	text-shadow: 0 0 8px rgba($black, 1);
-	color: white;
-	ul {
-		margin-bottom: 24px;
-	}
-	li {
-		font-size: 1.6em;
-		line-height: 1.4em;
-		font-weight: bold;
-	}
+.header_bgimage {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+
+  img {
+    position: absolute;
+    margin: 0;
+    width: 75%;
+    height: 75%;
+  }
+
+  img:first-child {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate_and_fadein 1.2s 0.6s both;
+  }
+
+  img:nth-child(2) {
+    top: 5%;
+    left: 5%;
+    animation: from_right 1.4s 0.4s both;
+  }
+
+  img:last-child {
+    right: 5%;
+    bottom: 5%;
+    animation: from_left 1.4s 0.4s both;
+  }
 }
 
-.header-glitch {
-	width: 640px;
-	height: 320px;
-	position: absolute;
-	left: -24px;
-	bottom: -96px;
-	z-index: 2;
-	background-image: url("images/header/glitch.png");
+/* ここから丸のスライドインアニメーション */
+@keyframes rotate_and_fadein {
+  0% {
+    transform: scale(0.75) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
 }
 
-.header-message {
-	font-size: 2em;
-	font-weight: bold;
+@keyframes from_right {
+  0% {
+    transform: translateX(200%) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
 }
 
-.header-info {
-	position: absolute;
-	bottom: 36px;
-	right: 128px;
-	width: 240px;
+@keyframes from_left {
+  0% {
+    transform: translateX(-200%) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
 }
 
-.header-banner {
-	display: block;
-	margin-bottom: 16px;
-	box-shadow: 0 2px 4px rgba($black, .2);
+.header_img {
+  position: absolute;
+  height: 100px;
+  bottom: 0;
 
-	> img {
-		width: 240px;
-		height: 80px;
-		box-shadow: 0 2px 4px rgba(0,0,0,.2);
-		border-radius: 2px;
-		transition: .1s;
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
-	&:hover > img {
-		opacity: .8;
-		transform: translateY(-1px);
-		box-shadow: 0 3px 6px rgba($black, .2);
-	}
-}
-
-.header-twitter-header {
-	background-color: #2796DD;
-	color: white;
-	border-radius: 4px 4px 0 0;
-	margin-bottom: -4px;
-	padding-bottom: 4px;
-	display: flex;
-	align-items: center;
-	font-size: 0.8em;
-
-	> img {
-		margin-left: 4px;
-	}
-
-	.twitter-name {
-		flex: 1;
-		color: white;
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	.twitter-follow {
-		color: white;
-		display: inline-block;
-		margin-right: 5px;
-		padding: 6px 12px;
-		text-decoration: none;
-		border: 1px solid $white;
-		border-radius: 16px;
-		transition: 0.1s;
-		&:hover {
-			background-color: $white;
-			color: $eclair-orange;
-		}
-	}
-}
-
-.header-share {
-	position: absolute;
-	bottom: 36px;
-	right: 240 + 16 + 128px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	height: 48px;
-	justify-content: space-between;
-	filter: url(#drop-shadow);
-  	-webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.8));
-}
-
-.header-canvas {
-	position: absolute;
-	height: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-@include mq(pc-narrow){
-	.header-logo {
-		right: 30px;
-	}
-	.header-hero {
-		transform: translateX(20%);
-	}
-	.header-detail {
-		left: 48px;
-	}
-	.header-info {
-		right: 48px;
-	}
-	.header-share {
-		right: 240 + 16 + 48px;
-	}
-}
-
-@include mq(tl){
-	.header-qpic {
-		top: 24px;
-		left: 32px;
-		img {
-			height: 36px;
-		}
-	}
-	.header-logo {
-		position: static;
-		transform: translateX(2%);
-		img {
-			height: auto;
-			width: calc(100% - 48px);
-			max-width: 640px;
-		}
-	}
-	.header-hero {
-		position: static;
-		margin: 48px 0 -144px;
-		width: 100%;
-		transform: translateX(0);
-		overflow: hidden;
-
-		img {
-			width: 80%;
-			height: auto;
-		}
-	}
-	.header-detail {
-		position: static;
-		margin: 32px auto;
-		width: calc(100% - 32px);
-		span {
-			display: inline-block;
-			margin: 4px 0;
-		}
-	}
-	.header-glitch {
-		display: none;
-	}
-	.header-info {
-		position: static;
-		width: calc(100% - 32px);
-		display: flex;
-		justify-content: space-around;
-		margin: 48px auto 16px;
-	}
-	.header-banner img {
-		margin: 0;
-	}
-	.header-share {
-		position: static;
-		flex-direction: row;
-		justify-content: center;
-		filter: url(#drop-shadow);
-  		-webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
-		iframe {
-			margin: 0 16px;
-		}
-	}
-}
-
-@include mq(sp){
-	.header-qpic {
-		top: 24px;
-		left: 32px;
-		img {
-			height: 36px;
-		}
-	}
-	.header-logo {
-		position: static;
-		img {
-			height: auto;
-			width: calc(100% - 48px);
-			max-width: 600px;
-		}
-	}
-	.header-hero {
-		position: static;
-		width: 100%;
-		margin: 48px 0 -96px;
-
-		img {
-			width: 120%;
-			transform: translateX(-16%);
-			height: auto;
-		}
-	}
-	.header-detail {
-		position: static;
-		margin: 32px auto;
-		width: calc(100% - 32px);
-		span {
-			display: inline-block;
-			margin: 4px 0;
-		}
-	}
-	.header-glitch {
-		display: none;
-	}
-	.header-message {
-		font-size: 1.6em;
-	}
-	.header-info {
-		position: static;
-		//width: calc(100% - 32px);
-		margin: 48px auto 16px;
-	}
-	.header-share {
-		position: static;
-		flex-direction: row;
-		justify-content: center;
-		filter: url(#drop-shadow);
-  		-webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
-		iframe {
-			margin: 0 16px;
-		}
-	}
+  img {
+    height: 100px;
+    width: auto;
+  }
 }

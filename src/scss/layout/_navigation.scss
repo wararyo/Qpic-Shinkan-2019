@@ -6,10 +6,11 @@
 	position: sticky;
 	top:0;
 	width: 100%;
-	height: 80px;
-	background-color: $eclair-orange;
-	box-shadow: 0px 4px 8px rgba($black, .16);
-	overflow: hidden;
+	height: 56px;
+	background-color: $white;
+	border-bottom: solid 3px #CCC;
+	box-shadow: 0px 3px 6px rgba($black, .1);
+	overflow: visible;
 
 	> .container-wide {
 		height: 100%;
@@ -22,9 +23,9 @@
 		height: 100%;
 		li {
 			position: relative;
-			font-size: 2em;
-			text-shadow: 0 1px 2px rgba($black, .3);
+			font-size: 1em;
 			text-align: center;
+			margin-bottom: -3px;
 			&:after {//border
 				content: "";
 				display: block;
@@ -42,8 +43,8 @@
 
 			&.active a {
 				background-color: $white;
-				color: $eclair-orange;
-				box-shadow: 0 0 0 8px $eclair-yellow inset;
+				color: $black;
+				border-bottom-width: 3px;
 			}
 
 			a {
@@ -54,13 +55,16 @@
 				flex-wrap: wrap;
 				width: 100%;
 				height: 100%;
-				color: $white;
+				color: #666;
 				text-decoration: none;
 				font-weight: bold;
-				transition: box-shadow 0.4s, all 0.1s;
+				transition: border-width 0.4s, all 0.1s;
+				border-bottom-width: 0px;
+        		border: solid 0px #f2711c;
 				&:hover {
-					background-color: $eclair-orange-light;
-					color: $white;//activeなやつをhoverしたとき用
+					background-color: #FAFAF7;
+					color: $black;//activeなやつをhoverしたとき用
+					border-bottom-width: 3px;
 				}
 			}
 			span {
@@ -78,19 +82,16 @@
 	}
 }
 
+.nav-events {
+	flex: 5;
+}
 .nav-about {
 	flex: 5;
 }
-
-.nav-character {
-	flex: 4;
+.nav-activity {
+	flex: 5;
 }
-
-.nav-gallery {
-	flex: 3;
-}
-
-.nav-download {
+.nav-qa {
 	flex: 5;
 }
 
@@ -103,24 +104,24 @@
 
 @include mq(pc-narrow){
 	.nav-about,
-	.nav-character,
-	.nav-gallery,
-	.nav-download {
+	.nav-events,
+	.nav-activity,
+	.nav-qa {
 		flex: 1;
 	}
 
 	.navigation ul li {
-		font-size: 1.8em;
+		font-size: 1.2em;
 	}
 }
 @include mq(tl){
 	.navigation ul li {
-		font-size: 1.6em;
+		font-size: 1.2em;
 	}
 	.nav-about,
-	.nav-character,
-	.nav-gallery,
-	.nav-download {
+	.nav-events,
+	.nav-activity,
+	.nav-qa {
 		flex: 1;
 	}
 }

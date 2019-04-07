@@ -37,14 +37,16 @@ var usage = ['','Gulpfile non-PHP Project',
 	'		js        : compile javascript manually',''
  ];
  
-gulp.task("server", function() {
+gulp.task("server", function(done) {
     browser.init({
         server: "dist"
     });
+    done();
 });
 
-gulp.task("reload", function() {
+gulp.task("reload", function(done) {
     browser.reload();
+    done();
 });
  
 gulp.task("sass", function(done) {
@@ -93,7 +95,7 @@ gulp.task("js", function(done) {
 
 gulp.task("dist",gulp.parallel("js","sass","html","image"));
 
-gulp.task("start",gulp.series( gulp.parallel('server'), function() {
+gulp.task("start",gulp.series( gulp.parallel('dist','server'), function() {
     gulp.watch(jsfiles,gulp.task("js"));
     gulp.watch(scssfiles,gulp.task("sass"));
     gulp.watch(htmlfiles,gulp.task("html"));
