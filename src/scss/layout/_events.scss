@@ -26,12 +26,12 @@
 			//min-height: 120px;
 			min-width: 120px;
 			//margin-top: 32px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 			color: #555;
+			text-align: center;
 			vertical-align: middle;
+		}
+		.events-event-wrapper {
+			display: flex;
 		}
 		.events-content {
 			margin: 16px;
@@ -48,7 +48,6 @@
 		img {
 			width: 240px;
 			margin: 16px;
-			float: left;
 		}
 		h3 {
 			font-size: 1.4em;
@@ -62,6 +61,17 @@
 		p {
 			line-height: 1.2em;
 			margin: 8px 0;
+		}
+		ul {
+			padding-left: 1em;
+			margin: 16px 0;
+			li {
+				list-style-type: disc;
+				margin: 8px;
+			}
+		}
+		span {
+			display: inline-block;
 		}
 	}
 }
@@ -85,6 +95,9 @@
 				td:first-of-type {
 					display: block;
 					margin: 16px 8px 0;
+				}
+				.events-event-wrapper {
+					display: block;
 				}
 				.events-content {
 					margin: 8px;
