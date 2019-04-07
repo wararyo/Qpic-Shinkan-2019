@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>新入生歓迎ページ - Qpic</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- OGP -->
     <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
@@ -47,17 +48,17 @@
 			<ul>
 				<li v-if="isPhone" class="toolbar-mobile"><a v-on:click="shownInMobile = !shownInMobile">{{currentSectionName}}</a></li>
 				<li class="nav-top" v-on:click="shownInMobile = false"><a href="#"><img src="images/navgation/top-icon.svg" alt="トップへ"></a></li>
-				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="home icon"></i>新歓イベント</a></li>
-				<li class="nav-about" :class="{active: currentSection == 1}" v-on:click="shownInMobile = false"><a href="#about"><i class="child icon"></i>Qpicって？</a></li>
-				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="child icon"></i>主な活動</a></li>
-				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="child icon"></i>Q&A</a></li>
+				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="fa-home fa"></i>新歓イベント</a></li>
+				<li class="nav-about" :class="{active: currentSection == 1}" v-on:click="shownInMobile = false"><a href="#about"><i class="fa-child fa"></i>Qpicって？</a></li>
+				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="fa-child fa"></i>主な活動</a></li>
+				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="fa-child fa"></i>Q&A</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="message">
 		<div class="message-header">
-			<i class="star icon" ></i>
+			<i class="fa fa-star"></i>
 			<div class="message-header-inner"><span>Qpic新歓ページへ</span><span>ようこそ！</span></div>
 		</div>
 		<div class="content">
@@ -66,7 +67,7 @@
 		</div>
 	</div>
 
-	<a class="join-button"><i class="handshake icon"></i>入部する</a>
+	<a class="join-button"><i class="fa-handshake fa"></i>入部する</a>
 	<div style="width: 80%; max-width: 800px; margin: 0 auto; text-align: right;"><img style="margin: -16px 0 -4px; -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .2) );" src="images/shinkan/f.png"></div>
 
 	<div class="events" id="events">

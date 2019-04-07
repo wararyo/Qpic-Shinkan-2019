@@ -6,20 +6,19 @@
     margin: 48px auto;
     padding: 16px 32px 16px 36px;
 }
-.message .header{
+.message .message-header{
     display: flex;
     margin-bottom: 8px;
+
 }
-.message .icon{
-    display: block;
+.message .fa{
+    display: inline-block;
     color: #F59231;
-    cursor: pointer;
-    width: auto;
-    font-size:3em;
-    transform: translateY(0.25em);
+    font-size:2em;
+    transform: translateY(0.5em);
     z-index: 1;
 }
-.message .icon:before{
+.message .fa:before{
     z-index: 1;
 }
 .message .content{
