@@ -1,0 +1,60 @@
+.qa {
+	width: 1200px;
+	margin: 24px auto;
+	padding: 24px;
+	background-color: #FFF;
+	box-shadow: 0 1px 2px rgba($black,.2);
+	border-top: 3px solid $secondary-color;
+	border-radius: 3px;
+	h2 {
+		font-size: 1.6em;
+		margin-bottom: 12px;
+	}
+	p {
+		line-height: 1.2em;
+		margin: 8px 0;
+	}
+	.question:before{
+	    color: rgba(0,0,0,.2);
+	    display: inline-block;
+	    font-size: 1.5em;
+	    content: "Q";
+	    width: 1.5em;
+	    text-align: center;
+	    margin: 0 0 0 -1.5em;
+	    transform: translateY(2px);
+	}
+	.question{
+	    margin: 8px 4px 8px 44px;
+	    padding-top: 16px;
+	    font-size: 1.2em;
+	    border-top: 1px solid #ddd;
+	    &:first-of-type {
+	    	border: none;
+	    }
+	}
+	.answer:before{
+	    color: rgba(0,0,0,.2);
+	    display:inline-block;
+	    font-size: 1.5em;
+	    content: "A";
+	    width: 1.5em;
+	    text-align: center;
+	    transform: translateY(2px);
+	    margin: 0 0 0 -1.5em;
+	}
+	.answer{
+	    margin: 8px 4px 8px 44px;
+	    font-size: 1.2em;
+	}
+	.answerdesc{
+	    margin: 16px 8px 24px 46px;
+	}
+
+	a {
+		color: $brown;
+	}
+}
+
+@include mq(sp){
+}

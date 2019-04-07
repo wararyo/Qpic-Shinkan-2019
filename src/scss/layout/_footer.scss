@@ -1,0 +1,116 @@
+footer{
+    background-color: #42200B;
+    width: 100%;
+    margin-top: 32px;
+    padding: 14px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: white;
+    font-size: 0.9em;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: #fedf00;
+    }
+
+    .footer-content {
+        width: 1127px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .footer-pane{
+        width: 33.3%;
+        min-height: 128px;
+        padding: 16px;
+        border-right: 1px dashed rgba(255,255,255,.4);
+    }
+
+    .footer-pane:last-child{
+        border: none;
+    }
+
+    .footer-pane .header{
+        font-weight: bolder;
+        font-size: 1.2em;
+    }
+
+    .copyright{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+    .copyright .qpic-logo{
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+    ul {
+        padding-left: 48px;
+    }
+    li {
+        line-height: 24px;
+        margin-bottom: 4px;
+        list-style-type: disc;
+    }
+
+    li ul li{
+        margin-bottom:  0;
+        list-style-type: circle;
+    }
+    p {
+        line-height: 1.2em;
+        margin: 8px 0;
+    }
+}
+
+@media only screen and (max-width: 1199px){
+    footer .footer-content{
+        width: 933px;
+    }
+}
+
+@media only screen and (max-width:991px){
+    footer .footer-content{
+        width: 723px;
+    }
+
+    footer .footer-pane{
+        width: 50%;
+    }
+
+    footer .footer-pane:nth-child(3) {
+        border: none;
+    }
+}
+
+@media only screen and (max-width:767px){
+    footer .footer-content{
+        width: 100%;
+    }
+    footer .footer-pane{
+        width: calc(50% - 8px);
+    }
+}
+
+@media only screen and (max-width:426px){
+    footer .footer-content{
+        width: 100%;
+    }
+    footer .footer-pane{
+        width: 100%;
+        border: none;
+    }
+    footer .footer-pane:nth-child(3) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

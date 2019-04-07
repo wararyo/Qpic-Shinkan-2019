@@ -49,7 +49,7 @@
 				<li class="nav-top" v-on:click="shownInMobile = false"><a href="#"><img src="images/navgation/top-icon.svg" alt="トップへ"></a></li>
 				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="home icon"></i>新歓イベント</a></li>
 				<li class="nav-about" :class="{active: currentSection == 1}" v-on:click="shownInMobile = false"><a href="#about"><i class="child icon"></i>Qpicって？</a></li>
-				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#qa"><i class="child icon"></i>主な活動</a></li>
+				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="child icon"></i>主な活動</a></li>
 				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="child icon"></i>Q&A</a></li>
 			</ul>
 		</div>
@@ -71,7 +71,7 @@
 
 	<div class="events" id="events">
 		<h2>Event Calendar</h2>
-		<table class="ui very basic padded celled table">
+		<table>
 			<thead>
 				<tr>
 					<th>Date</th>
@@ -197,9 +197,9 @@
 	<div class="about" id="about">
 		<h2>Qpicってどんなサークル？</h2>
         <p>九州大学物理研究部、通称Qpicは、自作ゲームを始めとしてドット絵やイラスト、DTM、シナリオなど、 PCを使った自由な作品づくりを行う創作サークルです。</p>
-        <h2>Qpicの主な活動</h2>
+        <h2 id="activity">Qpicの主な活動</h2>
         <h3>Qpic Game Jam</h3>
-	    	<img src="http://qpic.jp/img/pic/QGJ.JPG">
+	    	<img width="320" src="http://qpic.jp/img/pic/QGJ.JPG">
 	        <p>
 	            主な活動の1つとして、年に数回行われる<strong>Qpic Game Jam</strong>（以下QGJ）というゲーム制作企画があります。
 	        </p>
@@ -214,7 +214,7 @@
 	            これまでに多種多様なゲーム、そして伝説が生まれてきました。公開できるものはContents内で公開しておりますので、是非一度遊んでみてください。
 	        </p>
         <h3>創作講座</h3>
-            <img src="http://qpic.jp/img/pic/lecture.JPG">
+            <img width="320" src="http://qpic.jp/img/pic/lecture.JPG">
             <p>
                 QGJで良いゲームを作るには、高い能力が必要です。ああいうのが創りたいけど、どうしていいか分からないという方も多いでしょう。そこでQpicでは、そういった方々のために<strong>創作講座</strong>を開いています。
             </p>
@@ -225,7 +225,7 @@
                 講座内容はQGJと同じく主に3つ。プログラミング、グラフィック、そしてDTMです。またこれに加えて、近いうちに新たな内容が加わる予定です。
             </p>
         <h3>ゲームセンターQpic</h3>
-            <img src="http://qpic.jp/img/pic/gcq.jpg">
+            <img width="320" src="http://qpic.jp/img/pic/gcq.jpg">
             <p>
                 毎年行われる九大祭では、Qpicは教室を一部屋借りて<strong>ゲームセンターQpic</strong>を開いております。
             </p>
@@ -236,7 +236,7 @@
                 このサイトには載せていない（載せられない）物もありますので、九大祭開催の際には是非ゲームセンターQpicへお越しください。写真のようにコスプレした部員があなたをお待ちします。
             </p>
         <h3>レクリエーション</h3>
-            <img src="http://qpic.jp/img/pic/recreation.JPG">
+            <img width="320" src="http://qpic.jp/img/pic/recreation.JPG">
             <p>
                 また私達は、新入生歓迎会などと銘打って年に数回<strong>レクリエーション</strong>を行っています。
             </p>
@@ -246,6 +246,7 @@
             <p>
                 これは活動というよりも、むしろただの遊びに近いです。明確な目的なども持ちません。サークルに入って間もない方、あるいは入ろうと検討している方も、このレクリエーションを機に先輩方と仲良くなりましょう。
             </p>
+            <div style="clear: both;"></div>
 	</div>
 	<div class="qa" id="qa">
 		<h2>Qpic Q&A</h2>
@@ -300,7 +301,7 @@
 		        </ul>
 		    </div>
 		    <div class="footer-pane copyright">
-		        <img class="qpic-logo" src="assets/images/footer/Logo_footer.svg" height="48px">
+		        <img class="qpic-logo" src="images/footer/Logo_footer.svg" height="48px">
 		        <p>九州大学物理研究部</p>
 		        <a href="mailto:contact@qpic.jp">contact@qpic.jp</a>
 		        <p>Qpic all rights reserved.</p>
@@ -323,7 +324,7 @@
     </script>
 
     <!-- SVG Effect -->
-    <svg height="0">
+    <svg height="0" style="display: none">
 	<filter id="drop-shadow">
         <feGaussianBlur in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
         <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="1 0 0 0 0
